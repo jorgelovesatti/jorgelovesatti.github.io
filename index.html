@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+<head>
+	<meta charset="UTF-8">
+	<title>J&A</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+<body ng-controller="appController as appCtrl" >
+
+	<section id="app-container" >
+		<section 	id="panel-{{ $index }}" 
+					class="fs-panel bg-parallax text-center" 
+					ng-repeat="panel in appCtrl.panels">
+			<div class="light" >
+				<div class="row">
+					<h1 class="col col-md-10 col-md-offset-1" >
+						<span ng-hide="$first" >{{ $index + ". " }}</span>
+						{{ panel.name }}
+					</h1>
+					<h2 class="col col-md-10 col-md-offset-1" >
+						{{ panel.subtitle }}
+					</h2>
+					<p class="col col-md-10 col-md-offset-1" >
+						{{ panel.description }}
+					</p>
+				</div>
+				<button ng-hide="$first" class="btn continue" ng-click="appCtrl.goBack($index);" >
+					Previous
+				</button>
+				<button ng-hide="$last" class="btn continue" ng-click="appCtrl.goTo($index);" >
+					Continue
+				</button>
+				<button ng-show="$last" class="btn continue" ng-click="appCtrl.goTo(-1);" >
+					Enjoy my love again!
+				</button>
+			</div>
+		</section>
+	</section>
+
+	<script src="scripts/data.js" ></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/app.js" ></script>
+</body>
+</html>

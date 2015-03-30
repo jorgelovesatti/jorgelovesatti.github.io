@@ -1,0 +1,96 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Indie+Flower|Open+Sans);
+
+/*
+		font-family: 'Pacifico', cursive;
+		font-family: 'Indie Flower', cursive;
+		font-family: 'Open Sans', sans-serif;
+*/
+
+@import "compass/reset";
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: .5em;
+}
+
+h1 {
+	font-size: 2em;
+	border-bottom: 1px solid black;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+p {
+	padding: .5em;
+}
+
+.page-header {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+.fs-panel {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	
+	> div, > section {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&.fs-modal {
+		background: rgba(0,0,0,0.5);
+			
+			> div, > section {
+				z-index: 99;
+			}
+	}
+}
+
+#app-container {
+	overflow: hidden;
+}
+
+.continue {
+	background: rgba(1,1,1,0.5);
+	margin-top: 1em;
+	color: #f5f5f5;
+			&:hover, &:focus {
+				background: rgba(1,1,1,0.3);
+				color: #f5f5f5
+			}
+}
+
+.bg-parallax {
+	background-attachment : fixed;
+    background-position   : center center;
+    background-size       : cover;
+    background-repeat     : none;
+}
+
+.light {
+	color: whitesmoke;
+	background: rgba(0,0,0, 0.5);
+	padding: 1em 0;
+		h1 {
+			border-color: whitesmoke;
+		}
+}
+
+@for $i from 0 through 3 {
+    ##{("panel-"+$i)} {
+        background-image: url(../images/#{("panel-"+$i)}.jpg);
+    }
+}
