@@ -117,7 +117,7 @@ var data = [
 		description : "More than anything in my life."
 	},
 	{
-		name 		: "You sing like aan angel",
+		name 		: "You sing like an angel",
 		subtitle 	: "And I want to be the reason of your songs.",
 	},
 	{

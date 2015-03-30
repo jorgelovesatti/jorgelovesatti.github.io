@@ -89,7 +89,7 @@ p {
 		}
 }
 
-@for $i from 0 through 3 {
+@for $i from 0 through 30 {
     ##{("panel-"+$i)} {
         background-image: url(../images/#{("panel-"+$i)}.jpg);
     }
